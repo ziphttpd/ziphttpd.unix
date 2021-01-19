@@ -1,15 +1,19 @@
 #!/bin/bash
 SCRIPT=$0
 
-case "$1" in
-	ziphttpd|selector)
-		PROGID=$1
-		;;
-	*)
-		echo "Usage: ${SCRIPT} {ziphttpd|selector} {start|stop|restart|status}"
-		exit 1
-		;;
-esac
+#case "$1" in
+#	ziphttpd|selector)
+#		PROGID=$1
+#		;;
+#	*)
+#		echo "Usage: ${SCRIPT} {ziphttpd|selector} {start|stop|restart|status}"
+#		exit 1
+#		;;
+#esac
+
+filepath=$0
+filename=$(echo ${filepath##*/})
+PROGID=$(echo ${filename%.*})
 
 ARG=$2
 SCRIPT_DIR=$(cd $(dirname ${SCRIPT}); pwd)
