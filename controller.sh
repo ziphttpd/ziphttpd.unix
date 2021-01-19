@@ -36,7 +36,8 @@ fi
 case "${ARG}" in
 	start)
 		if [ ${RUNNING} == 0 ]; then
-			${EXE_FILE} > ${SCRIPT_DIR}/log/${PROGID}.out 2>&1 &
+			if [ ! -d "${SCRIPT_DIR}/log" ]; then mkdir ${SCRIPT_DIR}/log; fi
+			${EXE_FILE} >> ${SCRIPT_DIR}/log/${PROGID}.out 2>&1 &
 		fi
 		;;
 	stop)
