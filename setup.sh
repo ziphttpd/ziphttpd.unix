@@ -8,6 +8,10 @@ if [ ! "${ZH_HOME}" ]; then
 	exit 1
 fi
 
+SCRIPT=$0
+SCRIPT_DIR=$(cd $(dirname ${SCRIPT}); pwd)
+cd ${SCRIPT_DIR}
+
 function MAKELINK() {
 	PRJ=$1
 	LINKNAME=${ZH_HOME}/${PRJ}.sh
