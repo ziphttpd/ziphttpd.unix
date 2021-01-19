@@ -15,7 +15,7 @@ filepath=$0
 filename=$(echo ${filepath##*/})
 PROGID=$(echo ${filename%.*})
 
-ARG=$2
+ARG=$1
 SCRIPT_DIR=$(cd $(dirname ${SCRIPT}); pwd)
 EXE_FILE=${SCRIPT_DIR}/${PROGID}
 PID_FILE=${SCRIPT_DIR}/${PROGID}.pid
