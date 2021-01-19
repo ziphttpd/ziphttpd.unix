@@ -21,6 +21,7 @@ function MAKELINK() {
 	fi
 }
 
+git pull
 cp controller.sh ${ZH_HOME}/
 
 MAKELINK ziphttpd
