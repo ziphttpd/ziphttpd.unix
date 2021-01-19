@@ -10,7 +10,8 @@ echo "ZH_SRC: ${ZH_SRC}"
 if [ ! -d "${ZH_HOME}" ]; then mkdir ${ZH_HOME}; fi
 if [ ! -d "${ZH_SRC}" ]; then mkdir ${ZH_SRC}; fi
 
-function SETUP_PROJECT(PRJ) {
+function SETUP_PROJECT() {
+	PRJ=$1
 	echo "PROJECT BUILD START: ${PRJ}"
 	PRJ_DIR=${ZH_SRC}/${PRJ}
 	if [ ! -d "${PRJ_DIR}" ]; then git clone https://github.com/ziphttpd/${PRJ}; fi

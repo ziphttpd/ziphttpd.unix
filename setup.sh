@@ -8,7 +8,8 @@ if [ ! "${ZH_HOME}" ]; then
 	exit 1
 fi
 
-function MAKELINK(PRJ) {
+function MAKELINK() {
+	PRJ=$1
 	LINKNAME=${ZH_HOME}/${PRJ}.sh
 	if [ ! -L ${LINKNAME} ]; then
 		ln -s ${ZH_HOME}/controller.sh ${LINKNAME}
